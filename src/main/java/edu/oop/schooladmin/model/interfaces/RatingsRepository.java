@@ -1,5 +1,5 @@
 package edu.oop.schooladmin.model.interfaces;
 
-public class RatingsRepository {
+public interface RatingsRepository {
 	
 }

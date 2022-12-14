@@ -5,7 +5,7 @@ import edu.oop.schooladmin.model.implementations.testdb.TestDbProvider;
 
 public class App {
 	public static void main(String[] args) {
-		TestDbProvider dataProvider = new TestDbProvider();
+		// TestDbProvider dataProvider = new TestDbProvider();
 
 		// MainController mainController = new MainController(dataProvider);
 
