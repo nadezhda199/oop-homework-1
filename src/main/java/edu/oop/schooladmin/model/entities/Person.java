@@ -2,7 +2,7 @@ package edu.oop.schooladmin.model.entities;
 
 import java.time.LocalDate;
 
-public class Person {
+public abstract class Person {
     protected String firstName;
     protected String secondName;
     protected LocalDate birthDate;

@@ -1,24 +1,23 @@
 package edu.oop.schooladmin.model.entities;
 
 public class Discipline {
-	private int disciplineId;
+	private Integer disciplineId;
 	private String name;
 
-	public Discipline(int disciplineId, String name) {
+	public Discipline(Integer disciplineId, String name) {
 		this.disciplineId = disciplineId;
 		this.name = name;
 	}
 
 	public Discipline(Discipline other) {
-		this.disciplineId = other.disciplineId;
-		this.name = other.name;
+		this(other.disciplineId, other.name);
 	}
 
-	public int getDisciplineId() {
+	public Integer getDisciplineId() {
 		return disciplineId;
 	}
 
-	public void setDisciplineId(int disciplineId) {
+	public void setDisciplineId(Integer disciplineId) {
 		this.disciplineId = disciplineId;
 	}
 

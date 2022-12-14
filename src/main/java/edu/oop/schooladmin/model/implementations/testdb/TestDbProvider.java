@@ -7,6 +7,8 @@ import edu.oop.schooladmin.model.interfaces.RatingsRepository;
 import edu.oop.schooladmin.model.interfaces.StudentsRepository;
 import edu.oop.schooladmin.model.interfaces.TeacherAppointmentsRepository;
 import edu.oop.schooladmin.model.interfaces.TeachersRepository;
+import edu.oop.schooladmin.model.interfaces.UserRolesRepository;
+import edu.oop.schooladmin.model.interfaces.UsersRepository;
 
 public class TestDbProvider implements DataProvider {
 
@@ -60,6 +62,18 @@ public class TestDbProvider implements DataProvider {
 
 	@Override
 	public RatingsRepository ratingsRepository() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UsersRepository usersRepository() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserRolesRepository userRolesRepository() {
 		// TODO Auto-generated method stub
 		return null;
 	}

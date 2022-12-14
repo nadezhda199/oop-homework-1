@@ -1,6 +1,5 @@
 package edu.oop.schooladmin.model.interfaces;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import edu.oop.schooladmin.model.entities.Student;
