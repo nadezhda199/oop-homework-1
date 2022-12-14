@@ -13,10 +13,10 @@ public class DisciplinesTable {
 
 	private static final ArrayList<Discipline> disciplines = new ArrayList<>(Arrays.asList(
 			new Discipline(1, "Алгебра"),
-			new Discipline(1, "Геометрия"),
-			new Discipline(1, "Русский язык"),
-			new Discipline(1, "Литература"),
-			new Discipline(1, "Физика"),
-			new Discipline(1, "Химия"),
-			new Discipline(1, "Информатика")));
+			new Discipline(2, "Геометрия"),
+			new Discipline(3, "Русский язык"),
+			new Discipline(4, "Литература"),
+			new Discipline(5, "Физика"),
+			new Discipline(6, "Химия"),
+			new Discipline(7, "Информатика")));
 }

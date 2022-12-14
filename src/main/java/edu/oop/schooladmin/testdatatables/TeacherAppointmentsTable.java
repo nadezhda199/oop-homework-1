@@ -3,7 +3,6 @@ package edu.oop.schooladmin.testdatatables;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import edu.oop.schooladmin.model.entities.Teacher;
 import edu.oop.schooladmin.model.entities.TeacherAppointment;
 
 public class TeacherAppointmentsTable {

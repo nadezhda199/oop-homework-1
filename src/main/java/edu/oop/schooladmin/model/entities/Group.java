@@ -13,6 +13,13 @@ public class Group {
 		this.teacherId = teacherId;
 	}
 
+	public Group(Group other){
+		this.groupId = other.groupId;
+		this.classYear = other.classYear;
+		this.classMark = other.classMark;
+		this.teacherId = other.teacherId;
+	}
+
 	public int getGroupId() {
 		return groupId;
 	}
