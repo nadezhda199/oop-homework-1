@@ -1,5 +1,7 @@
 package edu.oop.schooladmin.model.implementations.testdb;
 
+import java.util.NoSuchElementException;
+
 import edu.oop.schooladmin.model.interfaces.DataProvider;
 import edu.oop.schooladmin.model.interfaces.DisciplinesRepository;
 import edu.oop.schooladmin.model.interfaces.GroupsRepository;
@@ -12,70 +14,63 @@ import edu.oop.schooladmin.model.interfaces.UsersRepository;
 
 public class TestDbProvider implements DataProvider {
 
-	private DisciplinesRepository disciplinesRepository;
-	private TeachersRepository teachersRepository;
+	private final DisciplinesRepository disciplinesRepository;
+	private final TeachersRepository teachersRepository;
 	private GroupsRepository groupsRepository;
 	private StudentsRepository studentsRepository;
 	private TeacherAppointmentsRepository teacherAppointmentsRepository;
 	private RatingsRepository ratingsRepository;
 
-	public TestDbProvider(DisciplinesRepository disciplinesRepository, TeachersRepository teachersRepository,
-			GroupsRepository groupsRepository, StudentsRepository studentsRepository,
-			TeacherAppointmentsRepository teacherAppointmentsRepository, RatingsRepository ratingsRepository) {
-		this.disciplinesRepository = disciplinesRepository;
-		this.teachersRepository = teachersRepository;
-		this.groupsRepository = groupsRepository;
-		this.studentsRepository = studentsRepository;
-		this.teacherAppointmentsRepository = teacherAppointmentsRepository;
-		this.ratingsRepository = ratingsRepository;
+	public TestDbProvider() {
+		this.disciplinesRepository = new TestDbDisciplinesRepository();
+		this.teachersRepository = new TestDbTeachersRepository();
+		// this.groupsRepository = new TestDbGroupsRepository();
+		// this.studentsRepository = new TestDbStudentsRepository();
+		// this.teacherAppointmentsRepository = new
+		// TestDbTeacherAppointmentsRepository();
+		// this.ratingsRepository = new TestDbRatingsRepository();
 	}
 
 	@Override
 	public DisciplinesRepository disciplinesRepository() {
-		// TODO Auto-generated method stub
-		return null;
+		return disciplinesRepository;
 	}
 
 	@Override
 	public TeachersRepository teachersRepository() {
-		// TODO Auto-generated method stub
-		return null;
+		return teachersRepository;
 	}
 
 	@Override
 	public GroupsRepository groupsRepository() {
-		// TODO Auto-generated method stub
-		return null;
+		return groupsRepository;
 	}
 
 	@Override
 	public StudentsRepository studentsRepository() {
-		// TODO Auto-generated method stub
-		return null;
+		return studentsRepository;
 	}
 
 	@Override
 	public TeacherAppointmentsRepository teacherAppointmentsRepository() {
-		// TODO Auto-generated method stub
-		return null;
+		return teacherAppointmentsRepository;
 	}
 
 	@Override
 	public RatingsRepository ratingsRepository() {
-		// TODO Auto-generated method stub
-		return null;
+		return ratingsRepository;
 	}
+
+	// До этой парочки возможно и не доберёмся ещё
 
 	@Override
 	public UsersRepository usersRepository() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new NoSuchElementException();
 	}
 
 	@Override
 	public UserRolesRepository userRolesRepository() {
-		// TODO Auto-generated method stub
-		return null;
+		throw new NoSuchElementException();
 	}
 
 }

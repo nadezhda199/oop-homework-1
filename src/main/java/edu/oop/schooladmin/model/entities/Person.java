@@ -4,12 +4,15 @@ import java.time.LocalDate;
 
 public abstract class Person {
     protected String firstName;
-    protected String secondName;
+    protected String lastName;
     protected LocalDate birthDate;
 
-    public Person(String firstName, String secondName, LocalDate birthDate) {
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName, LocalDate birthDate) {
         this.firstName = firstName;
-        this.secondName = secondName;
+        this.lastName = lastName;
         this.birthDate = birthDate;
     }
 
@@ -21,24 +24,24 @@ public abstract class Person {
         return firstName;
     }
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getSecondName() {
-        return secondName;
+    public String getLastName() {
+        return lastName;
     }
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
-    
+
     public LocalDate getBirthDate() {
         return birthDate;
     }
 
     @Override
     public String toString() {
-        return firstName + ":" + secondName + ":" + birthDate.toString();
+        return firstName + ":" + lastName + ":" + birthDate.toString();
     }
 }

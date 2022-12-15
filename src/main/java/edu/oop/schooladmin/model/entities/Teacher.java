@@ -6,6 +6,9 @@ public class Teacher extends Person {
 	private Integer teacherId;
 	private int grade;
 
+	public Teacher() {
+	}
+
 	public Teacher(Integer teacherId, String firstName, String secondName, LocalDate birthDate, int grade) {
 		super(firstName, secondName, birthDate);
 		this.teacherId = teacherId;
@@ -16,7 +19,7 @@ public class Teacher extends Person {
 		this(
 				other.teacherId,
 				other.firstName,
-				other.secondName,
+				other.lastName,
 				other.birthDate,
 				other.grade);
 	}

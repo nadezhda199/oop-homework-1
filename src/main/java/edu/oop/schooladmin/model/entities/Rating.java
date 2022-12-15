@@ -10,6 +10,9 @@ public class Rating {
 	private int value;
 	private String commentary;
 
+	public Rating() {
+	}
+
 	public Rating(Integer ratingId, Integer studentId, Integer disciplineId, LocalDateTime dateTime, int value,
 			String commentary) {
 		this.ratingId = ratingId;

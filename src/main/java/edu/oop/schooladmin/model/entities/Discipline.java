@@ -1,8 +1,11 @@
 package edu.oop.schooladmin.model.entities;
 
-public class Discipline {
+public class Discipline implements PropertiesReplicator<Discipline> {
 	private Integer disciplineId;
 	private String name;
+
+	public Discipline() {
+	}
 
 	public Discipline(Integer disciplineId, String name) {
 		this.disciplineId = disciplineId;
@@ -10,7 +13,8 @@ public class Discipline {
 	}
 
 	public Discipline(Discipline other) {
-		this(other.disciplineId, other.name);
+		// this(other.disciplineId, other.name);
+		copyProperties(other);
 	}
 
 	public Integer getDisciplineId() {
@@ -27,5 +31,16 @@ public class Discipline {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public void copyProperties(Discipline other) {
+		this.disciplineId = other.disciplineId;
+		this.name = other.name;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%d: %s", disciplineId, name);
 	}
 }

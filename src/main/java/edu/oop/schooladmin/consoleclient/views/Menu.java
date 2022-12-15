@@ -1,7 +1,7 @@
 package edu.oop.schooladmin.consoleclient.views;
 
 public class Menu {
-    public void mainMenu() {
+    public static void mainMenu() {
         System.out.println("Главное меню\n"
                 + "-------------\n"
                 + "1. Ученики\n"
@@ -15,7 +15,7 @@ public class Menu {
                 + "Выберите необходимый пункт меню");
     }
 
-    public void studentsMenu() {
+    public static void studentsMenu() {
         System.out.println("Меню ученики\n"
                 + "-------------\n"
                 + "1. Вывести список всех учеников\n"
@@ -30,7 +30,7 @@ public class Menu {
                 + "Выберите необходимый пункт меню");
     }
 
-    public void teacherMenu() {
+    public static void teacherMenu() {
         System.out.println("Меню учителя\n"
                 + "-------------\n"
                 + "1. Вывести список всех учителей\n"

@@ -6,6 +6,9 @@ public class TeacherAppointment {
 	private Integer disciplineId;
 	private Integer groupId;
 
+	public TeacherAppointment() {
+	}
+
 	public TeacherAppointment(Integer appointmentId, Integer teacherId, Integer disciplineId, Integer groupId) {
 		this.appointmentId = appointmentId;
 		this.teacherId = teacherId;

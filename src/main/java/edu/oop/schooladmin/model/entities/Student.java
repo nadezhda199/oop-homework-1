@@ -6,6 +6,9 @@ public class Student extends Person {
     private Integer studentId;
     private Integer groupId;
 
+    public Student() {
+    }
+
     public Student(Integer studentId, String firstName, String secondName, LocalDate birthDate, Integer groupId) {
         super(firstName, secondName, birthDate);
         this.studentId = studentId;
@@ -16,7 +19,7 @@ public class Student extends Person {
         this(
                 other.studentId,
                 other.firstName,
-                other.secondName,
+                other.lastName,
                 other.birthDate,
                 other.groupId);
     }

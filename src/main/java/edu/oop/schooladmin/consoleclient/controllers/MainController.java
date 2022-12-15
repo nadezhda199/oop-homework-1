@@ -2,33 +2,44 @@ package edu.oop.schooladmin.consoleclient.controllers;
 
 import java.util.Scanner;
 
-import edu.oop.schooladmin.consoleclient.interfaces.Controller;
 import edu.oop.schooladmin.consoleclient.views.MainView;
 import edu.oop.schooladmin.consoleclient.views.Menu;
 import edu.oop.schooladmin.model.interfaces.DataProvider;
 import edu.oop.utils.Console;
 
-public class MainController implements Controller {
-	private final DataProvider dp;
-	private final Scanner scanner;
-
-	private final Controller teachersController;
-	private final Controller studentsController;
-	private final Controller groupsController;
+public class MainController extends ControllerBase {
+	private final ControllerBase teachersController;
+	private final ControllerBase studentsController;
+	private final ControllerBase groupsController;
 
 	public MainController(DataProvider dp, Scanner scanner) {
-		this.dp = dp;
-		this.scanner = scanner;
-
-		this.teachersController = null;
-		this.studentsController = null;
-		this.groupsController = null;
+		super(dp, scanner);
+		this.teachersController = new TeachersController(dp, scanner);
+		this.studentsController = new StudentsController(dp, scanner);
+		this.groupsController = new GroupsController(dp, scanner);
 	}
 
 	public void runLifecycle() {
 		do {
 			Console.clearScreen();
 
-		} while (Console.askYesNo(scanner, "\nЖелаете повторить (Y/n)? ", true));
+			Menu.mainMenu();
+
+			int userChoice = Console.getUserInputIntRange(scanner, "Ваш выбор: ", 0, 5);
+			var controller = selectController(userChoice);
+			controller.runLifecycle();
+
+		} while (Console.askYesNo(scanner, "\nЗавершить работу (y/N)? ", false));
+	}
+
+	private ControllerBase selectController(int choice) {
+		return switch (choice) {
+			case 1 -> teachersController;
+			case 2 -> studentsController;
+			case 3 -> groupsController;
+			default -> {
+				throw new IllegalStateException(" ");
+			}
+		};
 	}
 }

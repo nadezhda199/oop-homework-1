@@ -5,6 +5,9 @@ public class UserRole {
 	private Integer userId;
 	private String roleName;
 
+	public UserRole() {
+	}
+
 	public UserRole(Integer roleId, Integer userId, String roleName) {
 		this.roleId = roleId;
 		this.userId = userId;
