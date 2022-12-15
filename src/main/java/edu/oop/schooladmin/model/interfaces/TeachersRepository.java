@@ -1,22 +1,35 @@
 package edu.oop.schooladmin.model.interfaces;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
 
 import edu.oop.schooladmin.model.entities.Teacher;
 
 public interface TeachersRepository {
-    boolean addTeacher(Teacher teacher);
+
+    // create
+
+    Teacher addTeacher(Teacher teacher);
+
+    // read
+
+    Teacher getTeacherById(int teacherId);
 
     List<Teacher> getAllTeachers();
 
-    Teacher getTeacherByTeacherId(Integer teacherId);
+    List<Teacher> getTeachersByFirstName(String firstName);
 
-    List<Teacher> getTeachersByTeacherSecondName(String secondName);
+    List<Teacher> getTeachersByLastName(String lastName);
 
-    List<Teacher> getTeachersByGrade(int grade);
+    List<Teacher> getTeachersByBirthDate(LocalDate from, LocalDate to);
 
-    boolean removeTeacher(Integer teacherId);
+    List<Teacher> getTeachersByGrade(int from, int to);
 
-    boolean updateTeacherData(Teacher teacher);
+    // update
+
+    boolean updateTeacher(Teacher teacher);
+
+    // delete
+
+    Teacher removeTeacher(int teacherId);
 }

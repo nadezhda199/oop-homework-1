@@ -1,22 +1,35 @@
 package edu.oop.schooladmin.model.interfaces;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
 
 import edu.oop.schooladmin.model.entities.Student;
 
 public interface StudentsRepository {
-    boolean addStudent(Student student);
+
+    // create
+
+    Student addStudent(Student student);
+
+    // read
+
+    Student getStudentById(int studentId);
 
     List<Student> getAllStudents();
 
-    Student getStudentByStudentId(Integer studentId);
+    List<Student> getStudentsByFirstName(String firstName);
 
-    List<Student> getStudentsByStudentSecondName(String secondName);
+    List<Student> getStudentsByLastName(String lastName);
 
-    List<Student> getStudentsByGroupId(int GroupId);
+    List<Student> getStudentsByGroupId(int groupId);
 
-    boolean removeStudent(Integer studentId);
+    List<Student> getStudentsByBirthDate(LocalDate from, LocalDate to);
 
-    boolean updateStudentData(Student student);
+    // update
+
+    boolean updateStudent(Student student);
+
+    // delete
+
+    Student removeStudent(int studentId);
 }

@@ -12,8 +12,10 @@ public class test {
         // System.out.println(test.getMaxId());
         // System.out.println("------Стартовый список------");
         // System.out.println(test.getAllStudents().toString());
-        // Student student1 = new Student(null, "Дмитрий", "Ковальчук", LocalDate.of(1996, 10, 14), 1);
-        // Student student2 = new Student(null, "Сергей", "Ковальчук", LocalDate.of(1995, 11, 24), 2);
+        // Student student1 = new Student(null, "Дмитрий", "Ковальчук",
+        // LocalDate.of(1996, 10, 14), 1);
+        // Student student2 = new Student(null, "Сергей", "Ковальчук",
+        // LocalDate.of(1995, 11, 24), 2);
         // System.out.println(test.addStudent(student1));
         // System.out.println(test.addStudent(student2));
         // System.out.println("------MaxId новое значение------");
@@ -37,7 +39,7 @@ public class test {
 
         TestDbTeachersRepository test = new TestDbTeachersRepository();
         System.out.println("----MaxId--------");
-        System.out.println(test.getMaxId());
+        System.out.println(test.lastId());
         System.out.println("------Стартовый список------");
         System.out.println(test.getAllTeachers().toString());
         Teacher teacher1 = new Teacher(null, "Дмитрий", "Ковальчук", LocalDate.of(1996, 10, 14), 1);
@@ -45,23 +47,23 @@ public class test {
         System.out.println(test.addTeacher(teacher1));
         System.out.println(test.addTeacher(teacher2));
         System.out.println("------MaxId новое значение------");
-        System.out.println(test.getMaxId());
+        System.out.println(test.lastId());
         System.out.println("------Новый список студентов------");
         System.out.println(test.getAllTeachers().toString());
         System.out.println("------Поиск по ID------");
-        System.out.println(test.getTeacherByTeacherId(2));
+        System.out.println(test.getTeacherById(2));
         System.out.println("------Поиск по фамилии------");
-        System.out.println(test.getTeachersByTeacherSecondName("Ковальчук"));
+        System.out.println(test.getTeachersByLastName("Ковальчук"));
         System.out.println("------Поиск по grade------");
-        System.out.println(test.getTeachersByGrade(9));
+        System.out.println(test.getTeachersByGrade(9, 10));
         System.out.println("------Удаление по ID------");
         System.out.println(test.removeTeacher(13));
         System.out.println("------список студентов после удаления------");
         System.out.println(test.getAllTeachers().toString());
         System.out.println("------Изменение------");
         teacher2.setGrade(155);
-        System.out.println(test.updateTeacherData(teacher2));
+        System.out.println(test.updateTeacher(teacher2));
         System.out.println(test.getAllTeachers().toString());
-        
+
     }
 }
